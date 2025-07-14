@@ -1,0 +1,18 @@
+import time # sleep is used from time library
+import sys 
+h=12 # random hour
+m=30 # random minute
+s=0 # random second or initialize
+while True:
+    sys.stdout.write(f"\r{h:02d} : {m:02d} : {s:02d}") # Here, \r  to bring the cursor back to start position
+    sys.stdout.flush() # to delete the print statement
+    time.sleep(1) # holds the screen for a second
+    s=s+1
+    if s>60 : # seconds
+        m=m+1
+        s=0
+    if m>60: # minutes
+        h=h+1
+        m=0
+    if h>24: # hours
+        h=0
