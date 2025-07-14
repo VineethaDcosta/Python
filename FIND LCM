@@ -1,0 +1,14 @@
+a = int(input("Enter num1: "))
+b = int(input("Enter num2: "))
+step = 0 # Define a variable
+if (a > b):
+    max = a
+else:
+    max = b
+step = max
+while(True): # infinite loop
+    if( max % a == 0 and max % b == 0): #if both are true then it prints else it fails and adds step to max
+        print("LCM is :",max)
+        break # Come out of the loop
+    else:
+        max = max + step # Use addition instead of direct multiplication
