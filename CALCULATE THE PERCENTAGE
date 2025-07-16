@@ -1,0 +1,21 @@
+import time
+names=[]
+marks=[]
+for i in range(1,6):
+    n=input("Enter the name of the student: ")
+    names.append(n)
+    student=[]
+    for j in range(1,4):
+        m = int(input(f"Enter mark {j}: "))
+        student.append(m)
+    marks.append
+
+percent=[]
+for i in marks:
+    final=sum(i)//3
+    percent.append(final)
+
+time.sleep(3)
+print("____________")
+for i in range(1,6):
+    print(f"{i}. {names[i]} : {percent[i]}%")
