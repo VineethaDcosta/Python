@@ -1,0 +1,14 @@
+import random
+n = int(input("Enter the number of teams: "))
+teams=[]
+for i in range(n):
+    a=input("Enter the team names: ")
+    teams.append(a)
+meeting= int(input("Enter number of pairs"))
+matches=[]
+index=1
+for i in range(n-1):
+    for j in range(i+1,n):
+        for k in range(meeting):
+                print(f"Match {index}: {teams[i]} vs {teams[j]} ")
+                index=index+1
