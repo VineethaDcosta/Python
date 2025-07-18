@@ -1,0 +1,27 @@
+names=["a","b","c","d","e","f","g","h","i","j"]
+memo=[0,1,1,1,2,2,1,2,1,2]
+salary=[1000, 2000, 3000, 4500, 2000, 5000, 1500,2300, 1300, 1100]
+employee= list(zip(names,memo,salary)) #Step1: Map the lists
+print(employee)
+q1=[] # the two removed in the first condition
+q2=[] # the rest removed
+remaining=[]
+for i in employee:
+    if i[2] > 4000: # condition1: remove emplyee if salary greater than 4000
+        q1.append(i)
+    else:
+        remaining.append(i) 
+# remaining=[i for i in employee if i[2]<4000]
+# instead of else
+c = sorted(remaining, key=lambda x:x[2], reverse=True)
+index = 0
+for i in c:
+    if i[1] >= 2:
+        q2.append(i)
+    if len(q2)>3:
+        break
+final=q1+q2
+print("final= ",final)
+for i in final:
+    print(f"{index}) {i[0]} : {i[1]} : {i[2]}")
+    index=index+1
