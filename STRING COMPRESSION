@@ -1,0 +1,11 @@
+a="aaabbcccccaa" #we donot use count in list as it will count all the same letters at once
+c=1 #count starts from 1
+result=""
+for i in range(len(a)): #use range instead of just a here because we'll have to manipulate indices
+    if i+1<len(a) and a[i]==a[i+1] :
+        c=c+1
+    else:
+        result= result+ a[i]
+        result=result+str(c)
+        c=1 #resetting count back to one to count a different letter
+print(result)
