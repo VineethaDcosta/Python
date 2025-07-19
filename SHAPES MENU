@@ -1,0 +1,31 @@
+def circle():
+    r=int(input("Enter the radius: "))
+    pi= 22/7
+    area1= pi*(r**2)
+    print(f"The area of the circle is {area1}")
+def square(a):
+    #print(f"The area of the square is {area2}")
+    return a**22
+    
+
+print("1. Circle\n2. Square\n3. Triangle\n4. Rectangle\n5. Exit")
+choice= int(input("Type your choice here in index numbers: "))
+match choice:
+    case 1: #here, for circle() we dont need to assign it to a variable
+        circle()
+    case 2: #but here, we have to first get the input then assign it to a variable and then print it , all outside the function
+        a=int(input("Enter the side: "))
+        area2=square(a)
+        print(f"The are of the square is {area2}")
+    case 3:
+        ba=int(input("Enter the base value: "))
+        h=int(input("Enter the height: "))
+        area3= 0.5 *ba*h
+        print(f"The area of the triangle is {area3}")
+    case 4:
+        l=int(input("Enter the length: "))
+        b=int(input("Enter the breadth: "))
+        area4=l*b
+        print("The area of the rectangle is {area4}")
+    case 5:
+        print("Thank you! See you next time ")
