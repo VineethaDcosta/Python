@@ -1,0 +1,59 @@
+accounts={101:3000,102:20000,103:3000}  # Database for account number:Balance
+
+def deposit(accounts,dep,acc_no): # function without return statement 
+    accounts[acc_no]+= dep
+    print(f"An amount of {dep} has been deposited to your account number {acc_no}")
+    
+def withdraw(accounts,wi,acc_no): # function without return statement 
+    if wi < accounts[acc_no]:
+        print("Insufficient Balance!")
+    else:
+        accounts[acc_no]-=wi
+        print(f"An amount of {wi} has been withdrwn from your account")
+
+def transfer(accounts, tr,acc_no):
+    t=int(input("Enter the recipient account number: "))
+    if t not in accounts:
+        print("Invalid Account number")
+    else:
+        yn=input("Enter 'Yes' if you have initiated this transfer: ")
+        if yn == "yes" or "Yes" or "YES":
+            tm=int(input("Enter the amount to be tranferred: "))
+            if tm < accounts[acc_no]:
+                print("Not enough balance!")
+            else:
+                accounts[acc_no]-=tr
+                accounts[t]+= tm
+                print(f"An amount of {tm} has been tranferred from {accounts[acc_no]} to {accounts[t]}")
+        elif yn == "No" or "NO" or "no":
+            print("Tranfer not initiated")
+            return
+          
+def menu(m):
+   match m:
+       case 1:
+           print(f"Your bank balance is {accounts[acc_no]}")
+       case 2:
+           dep= int(input("Please enter the amount to be deposited: "))
+           deposit(accounts,dep)
+           print(f"Your current balance is {accounts[acc_no]}")
+       case 3:
+           wi= int(input("Enter the amount to be withdrawn: "))
+           withdraw(accounts, wi,acc_no)
+           print(f"Your current balance is {accounts[acc_no]}")
+       case 4:
+           tr = int(input("Enter the amount required to transfer: "))
+           transfer(accounts, tr,acc_no)
+           print(f"Your current balance is {accounts[acc_no]}")
+       case 5:
+           print("Logging out..")
+        
+while(True):
+    print("---- Welcome to Bank management System ----")
+    acc_no=int(input("Enter your Account number here: "))
+    if acc_no not in accounts:
+        print("Invalid account number!\n Please try again!")
+    else:
+        print("MENU\n1. CHECK BALANCE\n2. DEPOSIT\n3. WITHDARW\n4. TRANSFER\n5. LOGOUT")
+        m = int(input("Enter the indices of your choice: "))
+        me=menu(m)
