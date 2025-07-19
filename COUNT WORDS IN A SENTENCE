@@ -1,0 +1,9 @@
+import time
+str1=input("Enter the  sentence ")
+c=0
+for i in range(len(str1)):
+    c=c+1
+time.sleep(2)
+print("Words= ",c) # total number of letters in a sentence
+res = str1.split()
+print(len(res)) # Total number of words
