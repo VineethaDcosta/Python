@@ -1,0 +1,26 @@
+class A:
+    def isprime(self,a):
+        self.a=a
+        for i in range(2,self.a):
+            if (self.a % i)==0:
+                return False
+            else:
+                return True
+#class B(A): #single inheritance: The class A can be accessed by B
+class B(A):
+    def sod(self,a):
+        self.a=a
+        return sum([int(i) for i in str(self.a)])
+
+#class C(A,B): #multiple inheritance where class C can access A and B  when class B: and not B(A)
+class C(B):
+    def show(self):
+        print("hello")
+
+
+s1=A()
+s2=C()
+s2.show()
+print(s2.isprime(33))
+print(s1.isprime(20))
+print(s1.sod(39)) #if class B(A)
