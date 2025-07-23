@@ -1,0 +1,43 @@
+from datetime import datetime
+class Bus:
+    def __init__(self,bno,ac,cap):
+        self.ac=ac
+        self.bno=bno
+        self.cap=cap
+
+    def get_ac(self): #Encapsulation
+        return self.ac
+    def get_bno(self): #Encapsulation
+        return self.bno
+    def get_cap(self): #Encapsulation
+        return self.cap
+    
+    def display(self):
+        print(f"1. BUS NUMBER: {self.get_bno()<10}")
+        print(f"2. AC: {self.get_ac()<10}")
+        print(f"3. BUS CAPACITY: {self.get_cap()<10}")
+BUS=[ Bus(1,True,2),Bus(1,False,60),Bus(3,False,50) ] #objects are inside list
+print("----AVAILABLE SEATS----")
+for i in BUS:
+    i.display()
+    print("----------------------------")
+while True:
+    print("1. Book Ticket")
+    print("2. View Bookings")
+    print("3. Exit")
+    m=int(input("Enter you choice: "))
+    match(m):
+        case 1:
+
+            
+
+
+class Bookings:
+    BOOKING=[]
+    def __init__(self):
+        name=input("Enter you name: ")
+        busno=input("Enter the bus number of your choice: ")
+        d=input("Enter the date of reservaation in (dd-mm-yyy) format: ")
+        date=datetime.strptime(d,"%d-%m-%Y"),date()
+
+    def make_bookings(self,BUS,BOOKING)
