@@ -1,0 +1,28 @@
+class employee:
+    profit=1000000
+    tax=10
+    company="COGNIZANT"
+    def __init__(self,name,age,salary,per):
+        self.name=name
+        self.age=age
+        self.salary=salary
+        self.per=per
+    def cal_tax(self):
+        return (employee.tax/100)*self.salary
+    def cal_share(self):
+        return (self.per/100)*employee.profit
+    def rem_sal(self):
+        return ((self.salary - self.cal_tax())+self.cal_share)
+    def display(self):
+        print("1) Name: ",self.name)
+        print("2) Age: ",self.age)
+        print("3) Salary: ",self.salary)
+        print("4) Name of the company: ",employee.company)
+        print("5) Tax to pay: ",self.cal_tax())
+        print("6) Profit share: ",self.cal_share())
+        print("7) Take home salary: ",self.rem_sal())
+a1=employee("Vindd",34,100000,4)
+print("-----------------------")
+a2=employee("Maya",40,155000,5)
+a1.display()
+a2.display()
