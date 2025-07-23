@@ -1,0 +1,4 @@
+def cal(x,a,b):
+    return 2*((x-a)/(a-b))+1
+print(cal(30,10,5))
+print(cal(25,7,4))
