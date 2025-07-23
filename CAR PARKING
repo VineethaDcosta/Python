@@ -1,0 +1,15 @@
+class carparking:
+    def __init__(self,big,medium,small):
+        self.big=big
+        self.medium=medium
+        self.small=small
+
+    def slots(self):
+        if self.big <0 and self.medium < 0 and self.small<0:
+            print("No slots available")
+        else:
+            if self.big > 0:
+                print("The number of large slots are: ", self.big)
+
+            elif self.medium > 0:
+                print("The number of large slots are: ", self.big)
