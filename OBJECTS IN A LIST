@@ -1,0 +1,14 @@
+class abc:
+    def dis(self,a,b):
+        self.a=a
+        self.b=b
+    def greet(self):
+        print("hi")
+z=abc()
+x=abc()
+z.dis(20,40) # this is the index 0 here
+x.dis(11,20) # this is index 1 here
+v=[] # list 
+v.append(z) # 
+v.append(x)
+print(v[0].a + v[1].b) # here a is 20 in z
