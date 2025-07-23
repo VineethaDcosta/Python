@@ -1,0 +1,22 @@
+students = [
+    {"name": "raju", "dept": "cse", "marks": [20, 30, 40]},
+    {"name": "vijay", "dept": "cse", "marks": [10, 70, 43]},
+    {"name": "pavi", "dept": "ece", "marks": [22, 38, 56]},
+    {"name": "rose", "dept": "ece", "marks": [26, 36, 89]},
+    {"name": "virat", "dept": "ece", "marks": [16, 90, 43]}
+]
+
+for i in students:
+    sum1= sum(i["marks"])
+    mean= sum1//3
+    i["percentage"]= mean
+
+print(students)
+
+ran=["FIRST","SECOND","THIRD","FOURTH","FIFTH"]
+
+top=sorted(students,key=lambda x:x[students["percentage"]],reverse= True)
+index=1
+for i in top:
+    print(f"{index}) {i}is ranked {ran}")
+    index=index+1
