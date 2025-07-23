@@ -1,0 +1,25 @@
+class shape:
+    
+    i="Properties of a rectangle:\n------------------------\n" #class variable
+    prop1="1) The sum of all angles is 360 degrees"
+    prop2="2) Each angle is of 90 degrees"
+    def display(self):
+        l=int(input("Enter the length of the rectangle: ")) #local variable
+        b=int(input("Enter the breadth of the rectangle: ")) #local variable
+        self.l=l #instance variable
+        self.b=b
+    def area(self):
+        print(self.l*self.b)
+    def peri(self):
+        print(2*(self.l+self.b))
+print(shape.i)
+print(shape.prop1)
+print(shape.prop2)
+o1=shape() #to assign dimensions to object is called a constructor
+o2=shape()
+o1.display()
+o2.display()
+o1.area()
+o2.area()
+o1.peri()
+o2.peri()
