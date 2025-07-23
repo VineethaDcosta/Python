@@ -1,0 +1,10 @@
+import calendar
+print(calendar.isleap(2025)) # if it is leap year
+
+from datetime import datetime
+birthdate=input("Enter your birthdate(YYYY-MM-DD): ")
+present=input("eEnter todays date (YYYY-MM-DD): ")
+d1 = datetime.strptime(birthdate, "%Y-%m-%d")
+d2 = datetime.strptime(present, "%Y-%m-%d")
+diff=d2-d1
+print("Days lived till date: ",abs(diff))
