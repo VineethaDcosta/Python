@@ -1,0 +1,8 @@
+import qrcode
+upi_id = " your upi id"
+name = "your name "
+amount="1"
+note="Payment"
+upi_link = f"upi://pay?={upi_id}&pn={name}&tn={amount}&cu"
+qr = qrcode.make(upi_link)
+qr.save("pay_g.png")
