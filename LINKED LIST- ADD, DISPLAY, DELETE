@@ -1,0 +1,50 @@
+class Node:
+    def __init_(self,data):
+        self.data=data
+        self.next=None
+
+class LinkedList:
+    def __init__(self): # here no arguments because head doesnot exist
+        self.head= None
+
+    def add_data(self,data):
+        newnode = Node(data) #here newnode is an object that should contain data. A container
+        if not self.head: # if nothing is present in list or head
+            self.head=newnode # declare that as the only node or last node
+        else:
+            temp = self.head # here if content is present assign a head and label it temp
+            while(temp.next != None): #now traverse using loop until the node is None or null i.e., last node
+                temp = temp.next  # .next is the address from Node class which jumps to the next node
+            temp.next = newnode # after the loop ends i.e., last node is named newnode
+
+    def display(self):
+        temp = self.head # assign a varaible temp to head
+        while(temp): # while the node is head
+            print(temp.data,end="->") # print data of that node
+            temp = temp.next # move to the next node
+    
+    def delete(self,a):
+        if self.head == None: # if no node then print
+            print("Delete not possible")
+            return
+        elif a==1: # if asked to delete the 1st node 
+            temp = self.head # assign a varaible temp to head
+            self.head=temp.next # now skip the head which is 1=a and jump to next
+        else:
+            prev=None # here the previous is made none so that traversing happens from current 
+            current=self.head
+            for i in range(1,a):
+                prev = current
+                current = current.next
+                if current == None:
+                    print("Element doesnot exist!")
+                    return
+            prev.next = current.next
+
+l=LinkedList()
+l.add_data(20)
+l.add_data(25)
+l.add_data(10)
+#l.display()
+l.delete(1)
+l.display()
