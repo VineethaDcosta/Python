@@ -1,0 +1,65 @@
+import time
+import sys
+import os
+
+# Define the star-style representations of numbers
+numbers = {
+    '1': [
+        "  *  ",
+        " **  ",
+        "  *  ",
+        "  *  ",
+        "*****"
+    ],
+    '2': [
+        " *** ",
+        "*   *",
+        "   * ",
+        "  *  ",
+        "*****"
+    ],
+    '3': [
+        "*****",
+        "    *",
+        " *** ",
+        "    *",
+        "*****"
+    ]
+}
+
+def clear():
+    os.system('cls' if os.name == 'nt' else 'clear') # Clear terminal screen for Windows or Unix
+
+def print_number(num_str):
+    for i in range(5):  # 5 rows per number
+        line = "   ".join(numbers[digit][i] for digit in num_str) # Print each line of the number side-by-side
+        print(line)
+    sys.stdout.flush()
+
+# Main 
+for _ in range(3):  # Repeat the flash 3 times
+    clear()
+    print_number("1")
+    time.sleep(0.8)
+    clear()
+    print_number("2")
+    time.sleep(0.8)
+    clear()
+    print_number("3") #logic to flash 123 and then 321
+    time.sleep(0.8)
+    
+    clear()
+    time.sleep(0.3)  # Pause before next number
+    
+    clear()
+    print_number("3")
+    time.sleep(0.8)
+    clear()
+    print_number("2")
+    time.sleep(0.8)
+    clear()
+    print_number("1") #logic to flash 123 and then 321
+    time.sleep(0.8)
+    
+    clear()
+    time.sleep(0.3)
