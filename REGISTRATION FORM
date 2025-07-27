@@ -1,0 +1,99 @@
+import tkinter
+import tkinter.messagebox
+
+def data_entry():
+    with open("Reg_form.txt", "a") as file:
+            n = name_f.get()
+            co = clg_f.get()
+            a = age_f.get()
+            cr = crs_f.get()
+            s = sem_f.get()
+            cn = contact_f.get()
+            el = em_f.get()
+            gh = gt_f.get()
+
+            # Writing data to the file
+            file.write("----- REGISTRATION DETAILS -----\n")
+            file.write(f"Name: {n}\n")
+            file.write(f"College Name: {co}\n")
+            file.write(f"Age: {a}\n")
+            file.write(f"Course: {cr}\n")
+            file.write(f"Semester: {s}\n")
+            file.write(f"Contact Number: {cn}\n")
+            file.write(f"Email: {el}\n")
+            file.write(f"GitHub: {gh}\n")
+            file.write("--------------------------------\n\n")
+
+            # Clear the fields after submission
+            name_f.delete(0, 'end')
+            clg_f.delete(0, 'end')
+            age_f.delete(0, 'end')
+            crs_f.delete(0, 'end')
+            sem_f.delete(0, 'end')
+            contact_f.delete(0, 'end')
+            em_f.delete(0, 'end')
+            gt_f.delete(0, 'end')
+
+            # Confirmation popup
+            tkinter.messagebox.showinfo("Success", "Registration submitted successfully!")
+    
+    
+
+
+
+root = tkinter.Tk() # window
+root.geometry("800x800") # defines the size of the window
+root.title("REGISTRATION FORM") # title of the window
+root.config(bg="#f0f0f0") # background color of the window
+head = tkinter.Label(root,text="REGISTRATION FORM",font=("Arial",20,"bold")) # Title on the window
+head.pack(pady=30)
+
+fr = tkinter.Frame(root,bg="#f0f0f0") #Frame on the window
+fr.pack(pady=10)
+
+name = tkinter.Label(fr,text="Name: ",font=("Arial",15))
+name.grid(row=0,column=0,padx=10,pady=10) #padx and pady determine the gap between the rows
+name_f = tkinter.Entry(fr)
+name_f.grid(row=0, column=1,padx=10,pady=10)
+
+clg = tkinter.Label(fr,text="College name: ",font= ("Arial",15))
+clg.grid(row=1,column=0,padx=10,pady=10)
+clg_f = tkinter.Entry(fr)
+clg_f.grid(row=1, column=1,padx=10,pady=10)
+
+age = tkinter.Label(fr,text="Age: ",font=("Arial",15))
+age.grid(row=2,column=0,padx=10,pady=10)
+age_f = tkinter.Entry(fr)
+age_f.grid(row=2, column=1,padx=10,pady=10)
+
+course = tkinter.Label(fr,text="Course: ",font=("Arial",15))
+course.grid(row=3,column=0,padx=10,pady=10) #padx and pady determine the gap between the rows
+crs_f = tkinter.Entry(fr)
+crs_f.grid(row=3, column=1,padx=10,pady=10)
+
+sem = tkinter.Label(fr,text="Semester: ",font=("Arial",15))
+sem.grid(row=4,column=0,padx=10,pady=10) #padx and pady determine the gap between the rows
+sem_f = tkinter.Entry(fr)
+sem_f.grid(row=4, column=1,padx=10,pady=10)
+
+contact = tkinter.Label(fr,text="Contact Number: ",font=("Arial",15))
+contact.grid(row=5,column=0,padx=10,pady=10) #padx and pady determine the gap between the rows
+contact_f = tkinter.Entry(fr)
+contact_f.grid(row=5, column=1,padx=10,pady=10)
+
+em = tkinter.Label(fr,text="Email: ",font=("Arial",15))
+em.grid(row=6,column=0,padx=10,pady=10) #padx and pady determine the gap between the rows
+em_f = tkinter.Entry(fr)
+em_f.grid(row=6, column=1,padx=10,pady=10)
+
+gt = tkinter.Label(fr,text="Github account: ",font=("Arial",15))
+gt.grid(row=7,column=0,padx=10,pady=10) #padx and pady determine the gap between the rows
+gt_f = tkinter.Entry(fr)
+gt_f.grid(row=7, column=1,padx=10,pady=10)
+
+btn = tkinter.Button(fr,text="SUBMIT",font=("Arial",10),command=data_entry)
+btn.grid(row=9, column=1,padx=50,pady=50)
+
+
+
+root.mainloop()
