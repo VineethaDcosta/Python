@@ -1,0 +1,70 @@
+class Node:
+    def __init__(self,data):
+        self.data=data
+        self.left=None
+        self.right=None
+
+class Tree:
+    def __init__(self):
+        self.root= None
+
+    def insert(self,data):
+        newnode=Node(data) #object to hold node data
+        if self.root == None: # if the root node is empty
+            self.root=newnode # make the newnode the root node
+        else:
+            temp=self.root # else if not empty, let temp be the root node
+            while True:
+                if data < temp.data: # if new data < current root data
+                    if temp.left==None: # if left node is vacant
+                        temp.left = newnode #assign newnode to left node
+                        break # if connection established then break
+                    else:
+                        temp = temp.left # otherwise, value in temp.left is made the parent node or middle nod
+                else:
+                    if temp.right==None: # if right node is vacant
+                        temp.right = newnode #assign newnode to right node
+                        break
+                    else:
+                        temp = temp.right # otherwise, value in temp.right is made the parent node or middle node
+
+    def inorder(self,root): #inorder = LMR
+        if root != None: #if root node exists 
+            self.inorder(root.left) #L
+            print(root.data, end=" ") #M
+            self.inorder(root.right) #R
+        
+    def preorder(self,root): #preorder = MLR
+        if root != None:
+            print(root.data, end=" ") #M
+            self.preorder(root.left) #L
+            self.preorder(root.right) #R
+
+    def postorder(self,root): #postorder = LRM
+        if root != None:
+            self.postorder(root.left) #L
+            self.postorder(root.right) #R
+            print(root.data, end=" ") #M
+
+
+
+t=Tree()
+t.insert(50)
+t.insert(100)
+t.insert(75)
+t.insert(5)
+t.insert(3)
+t.insert(12)
+t.insert(7)
+t.insert(110)
+t.insert(107)
+t.insert(2)
+t.insert(4)
+t.insert(117)
+t.insert(116)
+t.inorder(t.root)
+print()
+t.preorder(t.root)
+print()
+t.postorder(t.root)
+print()
